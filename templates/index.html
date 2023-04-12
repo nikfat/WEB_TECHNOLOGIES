@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список студентов</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="https://uust.ru/static/New_files_ugatu/images/redesign/icons/plane.svg">
+</head>
+<body>
+    <nav class="navbar">
+            <ul class="navbar__links">
+                <li>
+                    <a href="#" class="navbar__brand">Student List</a>
+                </li>
+                {% if session.logged_in %}
+                <li>
+                    <a href="{{ url_for('add_student') }}" class="btn-add-student">Add Student</a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar__links">
+                {% if not session.logged_in %}
+                <li>
+                    <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+                </li>
+                {% endif %}
+                {% if session.logged_in %}
+                <li>
+                    <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="table-container">
+        <h1 class="title_header">Список студентов</h1>
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>ФИО</th>
+                <th>Почта</th>
+                <th>Курс</th>
+                <th>Группа</th>
+                <th>Дата Рождения</th>
+                {% if session.logged_in %}
+                <th>Action</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student[0] }}</td>
+                <td>{{ student[1] }}</td>
+                <td>{{ student[2] }}</td>
+                <td>{{ student[3] }}</td>
+                <td>{{ student[4] }}</td>
+                <td>{{ student[5] }}</td>
+                {% if session.logged_in %}
+                <td>
+                    <a href="{{ url_for('edit_student', id=student[0]) }}">Edit</a>
+                    <a href="{{ url_for('delete_student', id=student[0]) }}">Delete</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

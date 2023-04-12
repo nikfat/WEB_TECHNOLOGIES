@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Редактирование студента</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="https://uust.ru/static/New_files_ugatu/images/redesign/icons/plane.svg">
+</head>
+<body>
+    <nav class="navbar">
+            <ul class="navbar__links">
+                <li>
+                    <a href="{{ url_for('index') }}" class="navbar__brand">Student List</a>
+                </li>
+                {% if session.logged_in %}
+                <li>
+                    <a href="{{ url_for('add_student') }}" class="btn-add-student">Add Student</a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar__links">
+                {% if not session.logged_in %}
+                <li>
+                    <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+                </li>
+                {% endif %}
+                {% if session.logged_in %}
+                <li>
+                    <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="list-container">
+  <h1 class="title_header add_stud">Редактирование студента</h1>
+  <form class="form" method="POST" action="{{ url_for('edit_student', id=student[0]) }}">
+    <div class="form-group">
+      <label for="name">Имя:</label>
+      <input id="name" class="form-input form-edit" type="text" name="name" value="{{ student[1] }}" required>
+    </div>
+    <div class="form-group">
+      <label for="email" class="from-label">Email:</label>
+      <input id="email" class="form-input form-edit" type="email" name="email" value="{{ student[2] }}" required>
+    </div>
+    <div class="form-group" >
+      <label for="course" class="from-label">Курс:</label>
+      <input id="course" class="form-input form-edit" type="number" name="course" value="{{ student[3] }}" required>
+    </div>
+    <div class="form-group">
+      <label for="groups" class="from-label">Группа:</label>
+      <input id="groups" class="form-input form-edit" type="text" name="groups" value="{{ student[4] }}" required>
+    </div>
+    <div class="form-group">
+      <label for="birthdate" class="from-label" >Дата Рождения:</label>
+      <input id="birthdate" class="form-input form-edit" type="date" name="birthdate" value="{{ student[5] }}" required>
+    </div>
+    <div class="form-actions">
+      <button class="form-submit" type="submit">Сохранить</button>
+      <a class="form-cancel" href="{{ url_for('index') }}">Отмена</a>
+    </div>
+  </form>
+    </div>
+</body>
+</html>

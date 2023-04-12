@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Вход</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="https://uust.ru/static/New_files_ugatu/images/redesign/icons/plane.svg">
+</head>
+<body>
+
+	<div class="container mt-5">
+		<h2>Вход</h2>
+		{% if error %}
+			<div class="alert alert-danger">{{ error }}</div>
+		{% endif %}
+		<form method="post">
+			<div class="form-group">
+				<label for="username">Логин</label>
+				<input type="text" class="form-control" id="username" name="username" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Пароль</label>
+				<input type="password" class="form-control" id="password" name="password" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Войти</button>
+		</form>
+	</div>
+	<div class="container mt-5 text-center">
+	<div class="alert alert-warning d-inline-flex max-width-100 text-center px-3" role="alert">
+  <p class="mb-0 ">Логин: admin </p><br>
+  <p class="pl-3">Пароль: secret</p>
+</div>
+	</div>>
+
+
+</body>
+
+</html>

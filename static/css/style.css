@@ -1,0 +1,163 @@
+/* other */
+.title_header {
+display: flex;
+justify-content: center;
+font-family: sans-serif;
+}
+body{
+background-color:#cce1de;
+padding-top:0.1em;
+}
+
+/* Nav bar */
+
+nav {
+  background-color: #009879;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: all 0.2s ease;
+}
+
+.navbar a:hover {
+  background-color: #e5f0ee;
+  color: #009879;
+}
+
+/* Table */
+.styled-table {
+    background-color: #e5f0ee;
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #009879;
+    color: #009879;
+    transition: background-color 0.3s ease;
+}
+
+.styled-table a:hover {
+    background-color: #006d5e;
+    color: white;
+}
+
+.list-container {
+background-color: #e5f0ee;
+    border-collapse: collapse;
+    margin: 50px auto;
+    margin-left: 25em;
+    margin-right: 25em;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.student-form , .form{
+padding: 12px 15px;
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+}
+
+.form-label{
+font-size: 0.9em;
+font-family: sans-serif;
+font-weight: bold;
+}
+
+.form-input{
+min-width: 250px;
+max-width: 750px;
+text-align: center;
+}
+
+.form-cancel , .form-submit{
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #009879;
+    color: #009879;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+.form-submit:hover , .form-cancel:hover{
+background-color: #006d5e;
+color: white;
+}
+
+.add_stud{
+display: inline-block;
+}
+
+.form-group{
+display: flex;
+flex-direction: column;
+padding:0.2em;
+}
+
+.form-edit{
+min-width: 250px;
+max-width: 700px;
+text-align: center;
+display: inline-block;
+margin-left: 25em;
+margin-right: 25em;
+
+}
